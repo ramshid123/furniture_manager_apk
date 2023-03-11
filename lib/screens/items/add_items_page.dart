@@ -50,7 +50,7 @@ class AddItemsPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   final _picker = ImagePicker();
-                  file = await _picker.pickImage(source: ImageSource.gallery);
+                  file = await _picker.pickImage(source: ImageSource.gallery,imageQuality: 10);
                   print(file);
                   Get.find<ViewController>(tag: 'viewcont').fileName.value =
                       file!.name;

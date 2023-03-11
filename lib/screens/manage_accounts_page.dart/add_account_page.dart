@@ -90,7 +90,7 @@ class AddAccountsPage extends StatelessWidget {
                     await AccountModel(
                       name: name_cont.text,
                       role: cont.dropDownValue.value,
-                      email: email_cont.text,
+                      email: email_cont.text.trim(),
                       password: password_cont.text,
                       mobile_no: mobile_no_cont.text,
                       address: address_cont.text,

@@ -1,7 +1,9 @@
 import 'package:appwrite/models.dart';
 import 'package:flutter/material.dart';
 import 'package:wooodapp/controller/controller.dart';
+import 'package:wooodapp/main.dart';
 import 'package:wooodapp/model/customer_model.dart';
+import 'package:wooodapp/model/get_user_list.dart';
 import 'package:wooodapp/screens/customer/update_customer_page.dart';
 import 'package:get/get.dart';
 import 'package:wooodapp/screens/leads/leads_page.dart';
@@ -154,12 +156,16 @@ class CustomerPage extends StatelessWidget {
                                                         ),
                                                         SizedBox(height: 20),
                                                         Container(
-                                                          width: Get.width/2,
+                                                          width: Get.width / 2,
                                                           decoration: BoxDecoration(
-                                                            color: Colors.blue[500],
-                                                            borderRadius: BorderRadius.circular(20)
-                                                          ),
-                                                          child: TextButton.icon(
+                                                              color: Colors
+                                                                  .blue[500],
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20)),
+                                                          child:
+                                                              TextButton.icon(
                                                             label: Text(
                                                               'Edit Data',
                                                               style: TextStyle(
@@ -175,8 +181,8 @@ class CustomerPage extends StatelessWidget {
                                                                     delivery_date:
                                                                         item
                                                                             .delivery_date,
-                                                                    name:
-                                                                        item.name,
+                                                                    name: item
+                                                                        .name,
                                                                     mobile_no: item
                                                                         .mobile_no,
                                                                     address: item
@@ -187,25 +193,30 @@ class CustomerPage extends StatelessWidget {
                                                                         .item_code,
                                                                     item_desc: item
                                                                         .item_desc,
-                                                                    item:
-                                                                        item.item,
+                                                                    item: item
+                                                                        .item,
                                                                     delivery_status:
                                                                         item.delivery_status),
                                                               );
                                                             },
-                                                            icon: Icon(Icons.edit,
-                                                                color:
-                                                                    Colors.blue[900]),
+                                                            icon: Icon(
+                                                                Icons.edit,
+                                                                color: Colors
+                                                                    .blue[900]),
                                                           ),
                                                         ),
                                                         SizedBox(height: 20),
                                                         Container(
-                                                          width: Get.width/2,
+                                                          width: Get.width / 2,
                                                           decoration: BoxDecoration(
-                                                            color: Colors.red[500],
-                                                            borderRadius: BorderRadius.circular(20)
-                                                          ),
-                                                          child: TextButton.icon(
+                                                              color: Colors
+                                                                  .red[500],
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20)),
+                                                          child:
+                                                              TextButton.icon(
                                                             label: Text(
                                                               'Delete Data',
                                                               style: TextStyle(
@@ -217,12 +228,12 @@ class CustomerPage extends StatelessWidget {
                                                               deleteCustomerData(
                                                                   context,
                                                                   item.ref_no);
-                                                                  Get.back();
+                                                              Get.back();
                                                             },
                                                             icon: Icon(
                                                                 Icons.delete,
-                                                                color:
-                                                                    Colors.red[900]),
+                                                                color: Colors
+                                                                    .red[900]),
                                                           ),
                                                         ),
                                                       ],
@@ -250,7 +261,9 @@ class CustomerPage extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            onTap: () {
+                            onTap: () async {
+                              final target =
+                                  await get_user_name_from_id(item.uploader);
                               showModalBottomSheet(
                                 context: context,
                                 builder: (context) => Container(
@@ -287,6 +300,11 @@ class CustomerPage extends StatelessWidget {
                                         SingleLeadsDataContainerTextMobileMode(
                                             'Delivery Status',
                                             item.delivery_status),
+                                       Visibility(
+                                      visible: isAdmin,
+                                      child: SingleLeadsDataContainerTextMobileMode(
+                                          'Credit', target.name+'\n('+target.email+')'),
+                                    ),
                                       ],
                                     ),
                                   ),
@@ -294,9 +312,9 @@ class CustomerPage extends StatelessWidget {
                               );
                             },
                           );
-                        })),itemCount: customer_model_list.length,
-                      )
-                      );
+                        })),
+                        itemCount: customer_model_list.length,
+                      ));
           },
         ));
   }

@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:wooodapp/controller/controller.dart';
 import 'package:wooodapp/main.dart';
+import 'package:wooodapp/model/get_user_list.dart';
 import 'package:wooodapp/model/purchase_model.dart';
 import 'package:get/get.dart';
 import 'package:wooodapp/screens/leads/leads_page.dart';
@@ -127,7 +128,8 @@ class PurchasePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        onTap: () {
+                        onTap: () async{
+                          final target = await get_user_name_from_id(item.uploader);
                           showModalBottomSheet(
                             context: context,
                             builder: (context) => Container(
@@ -158,6 +160,11 @@ class PurchasePage extends StatelessWidget {
                                         'Arrival Date', item.arrival_date),
                                     SingleLeadsDataContainerTextMobileMode(
                                         'Order Status', item.order_status),
+                                   Visibility(
+                                      visible: isAdmin,
+                                      child: SingleLeadsDataContainerTextMobileMode(
+                                          'Credit', target.name+'\n('+target.email+')'),
+                                    ),
                                     Visibility(
                                       visible: isAdmin,
                                       child: ElevatedButton(

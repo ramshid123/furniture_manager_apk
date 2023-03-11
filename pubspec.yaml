@@ -31,24 +31,23 @@ environment:
 dependencies:
   appwrite: ^8.1.0
   cupertino_icons: ^1.0.2
+  dart_appwrite: ^7.2.0
   dropdown_search: ^0.6.3
   flutter:
     sdk: flutter
-  # flutter_launcher_icons: ^0.11.0
   flutter_typeahead: ^4.1.1
   get: ^4.6.5
   http: ^0.13.5
   image_picker: ^0.8.6+1
   intl: ^0.18.0
   pdf: ^3.8.4
-  printing: ^5.10.1 #            5.9.3
+  printing: ^5.10.1
   shared_preferences: ^2.0.17
 
 # flutter_icons:
 #   #  image_path: "assets/images/icon-128x128.png"
 #   image_path_android: "assets/woodCode2.png"
 #   android: true # can specify file name here e.g. "ic_launcher"
-
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:appwrite/appwrite.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:wooodapp/model/get_user_list.dart';
 import 'package:wooodapp/splash_screen.dart';
 import 'package:wooodapp/controller/controller.dart';
 import 'package:wooodapp/screens/dashboard/dashboard_screen.dart';
@@ -27,7 +28,8 @@ import 'package:wooodapp/services/auth.dart';
 
 void main(List<String> args) async {
   final cont = Get.put(ViewController(), tag: 'viewcont', permanent: true);
-  initAppwrite();
+  await initAppwrite();
+  await init_dart_appwrite();
   // await WindowManager.instance.setFullScreen(cont.isfullscreen.value);
   // await FullScreen.enterFullScreen(FullScreenMode.EMERSIVE);
   runApp(MyApp());
@@ -74,6 +76,7 @@ Future<void> initAppwrite() async {
   db = Databases(client);
   storage = Storage(client);
   acc = Account(client);
+
   realtime = Realtime(client);
 
     try {

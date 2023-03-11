@@ -1,6 +1,8 @@
 import 'package:appwrite/models.dart';
 import 'package:flutter/material.dart';
 import 'package:wooodapp/controller/controller.dart';
+import 'package:wooodapp/main.dart';
+import 'package:wooodapp/model/get_user_list.dart';
 import 'package:wooodapp/model/visit_customer_model.dart';
 import 'package:wooodapp/screens/leads/leads_page.dart';
 import 'package:wooodapp/screens/visit_customer/move_from_go_to_cust_page.dart';
@@ -255,7 +257,9 @@ class VisitCustomerPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        onTap: () {
+                        onTap: () async {
+                          final target =
+                              await get_user_name_from_id(item.uploader);
                           showModalBottomSheet(
                             context: context,
                             builder: (context) => Container(
@@ -280,6 +284,11 @@ class VisitCustomerPage extends StatelessWidget {
                                         'Visit Date', item.visit_date),
                                     SingleLeadsDataContainerTextMobileMode(
                                         'Visit Description', item.visit_desc),
+                                   Visibility(
+                                      visible: isAdmin,
+                                      child: SingleLeadsDataContainerTextMobileMode(
+                                          'Credit', target.name+'\n('+target.email+')'),
+                                    ),
                                   ],
                                 ),
                               ),

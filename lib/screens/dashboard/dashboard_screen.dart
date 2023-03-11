@@ -7,6 +7,7 @@ import 'package:wooodapp/controller/controller.dart';
 import 'package:wooodapp/main.dart';
 import 'package:wooodapp/model/activities_model.dart';
 import 'package:wooodapp/model/customer_model.dart';
+import 'package:wooodapp/model/get_user_list.dart';
 import 'package:wooodapp/model/purchase_model.dart';
 import 'package:wooodapp/model/visit_customer_model.dart';
 import 'package:wooodapp/screens/leads/leads_page.dart';
@@ -69,7 +70,7 @@ class DashBoardScreen extends StatelessWidget {
                             DashBoardElements(4, 7),
                             Visibility(
                                 visible: isAdmin,
-                                child: DashBoardElements(5, 8))
+                                child: DashBoardElements(5, 8)),
                           ],
                         ),
                       ],
