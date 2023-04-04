@@ -63,7 +63,7 @@ class EditItemDataContainer extends StatelessWidget {
                       units: units_cont.text);
                   await updateItemsData(context, doc_id, item);
                   Get.back();
-                  cont.currentPageIndex.value = 7;
+                  cont.currentPageIndex.value = 5;
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: Text('Data Updated Successfully'),
                     backgroundColor: Colors.blue,

@@ -42,7 +42,7 @@ class ItemsPage extends StatelessWidget {
                               children: [
                                 ElevatedButton.icon(
                                   onPressed: () {
-                                    cont.currentPageIndex.value = 13;
+                                    cont.currentPageIndex.value = 11;
                                     Get.back();
                                   },
                                   label: Text('Add Data'),

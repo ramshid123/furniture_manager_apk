@@ -46,7 +46,7 @@ class VisitCustomerPage extends StatelessWidget {
                                       children: [
                                         ElevatedButton.icon(
                                           onPressed: () {
-                                            cont.currentPageIndex.value = 11;
+                                            cont.currentPageIndex.value = 9;
                                             Get.back();
                                           },
                                           label: Text('Add Data'),

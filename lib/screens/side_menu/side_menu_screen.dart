@@ -12,9 +12,7 @@ final buttonsname = [
   'Leads',
   'Customers',
   'Go Customer',
-  'Sales',
   'Purchase Order',
-  'Report',
   'Items',
   'Manage Accounts',
   'Logout'
@@ -25,9 +23,7 @@ final buttonsIcons = [
   Icons.folder_shared_rounded,
   Icons.person,
   Icons.location_pin,
-  Icons.business_center_rounded,
   Icons.outlined_flag_rounded,
-  Icons.report,
   Icons.list_alt_sharp,
   Icons.manage_accounts,
   Icons.logout
@@ -46,7 +42,7 @@ class SideMenu extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(height: 50),
+              SizedBox(height: 70),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

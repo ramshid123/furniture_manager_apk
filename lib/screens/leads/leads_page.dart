@@ -50,7 +50,7 @@ class LeadsPage extends StatelessWidget {
                                   children: [
                                     ElevatedButton.icon(
                                       onPressed: () {
-                                        cont.currentPageIndex.value = 9;
+                                        cont.currentPageIndex.value = 7;
                                         Get.back();
                                       },
                                       label: Text('Add Data'),

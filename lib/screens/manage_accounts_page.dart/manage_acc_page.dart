@@ -45,7 +45,7 @@ class ManageAccountsPage extends StatelessWidget {
                                         children: [
                                           ElevatedButton.icon(
                                             onPressed: () {
-                                              cont.currentPageIndex.value = 14;
+                                              cont.currentPageIndex.value = 12;
                                               Get.back();
                                             },
                                             label: Text('Add Data'),

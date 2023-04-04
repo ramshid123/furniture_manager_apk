@@ -31,7 +31,7 @@ class PurchasePage extends StatelessWidget {
                       // ElevatedButton(onPressed: (){testfunadd();}, child: Text('test')),
                       ElevatedButton.icon(
                         onPressed: () {
-                          cont.currentPageIndex.value = 12;
+                          cont.currentPageIndex.value = 10;
                         },
                         label: Text('Add Data'),
                         icon: Icon(Icons.add),

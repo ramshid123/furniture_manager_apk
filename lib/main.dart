@@ -119,18 +119,16 @@ final screens = [
   LeadsPage(), //1
   CustomerPage(), //2
   VisitCustomerPage(), //3
-  SalesPage(), //4
-  PurchasePage(), //5
-  ReportPage(), //6
-  ItemsPage(), //7
-  ManageAccountsPage(), //8
+  PurchasePage(), //4
+  ItemsPage(), //5
+  ManageAccountsPage(), //6
   ////////////////
-  AddLeadsPage(), //9
-  AddCustomerPage(), //10
-  AddGoCustomerPage(), //11
-  AddPurchasePage(), //12
-  AddItemsPage(), //13
-  AddAccountsPage(), //14
+  AddLeadsPage(), //7
+  AddCustomerPage(), //8
+  AddGoCustomerPage(), //9
+  AddPurchasePage(), //10
+  AddItemsPage(), //11
+  AddAccountsPage(), //12
 ];
 
 final superAdmin = 'admin@main.com';

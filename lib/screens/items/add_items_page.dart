@@ -91,7 +91,7 @@ class AddItemsPage extends StatelessWidget {
                       supplier: supplier_cont.text,
                       units: units_cont.text,
                     ).addItemData(res: file);
-                    cont.currentPageIndex.value = 7;
+                    cont.currentPageIndex.value = 5;
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Data Added Successfully'),
                       backgroundColor: Colors.blue,

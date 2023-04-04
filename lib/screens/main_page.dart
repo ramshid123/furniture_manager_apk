@@ -29,7 +29,7 @@ class MainPage extends StatelessWidget {
           backgroundColor: Colors.grey[700],
           title: Obx(() {
             return Text(
-              cont.currentPageIndex.value > 7
+              cont.currentPageIndex.value > 6
                   ? ''
                   : buttonsname[cont.currentPageIndex.value],
               style: TextStyle(

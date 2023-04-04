@@ -95,7 +95,7 @@ class AddPurchasePage extends StatelessWidget {
                             uploader: user.$id,
                             order_status: 'In Process')
                         .addPurchaseOrderData();
-                    cont.currentPageIndex.value = 5;
+                    cont.currentPageIndex.value = 4;
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       content: Text('Data Added Successfully'),
                       backgroundColor: Colors.blue,

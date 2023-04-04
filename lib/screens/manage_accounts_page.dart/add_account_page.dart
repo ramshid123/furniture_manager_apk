@@ -96,7 +96,7 @@ class AddAccountsPage extends StatelessWidget {
                       address: address_cont.text,
                     ).addAccount(file: file);
                     if (!isEmailExist) {
-                      cont.currentPageIndex.value = 8;
+                      cont.currentPageIndex.value = 6;
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text('Data Added Successfully'),
                         backgroundColor: Colors.blue,
