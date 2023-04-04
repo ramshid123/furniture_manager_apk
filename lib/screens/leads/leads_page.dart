@@ -125,11 +125,14 @@ class LeadsPage extends StatelessWidget {
                                       SizedBox(height: 10),
                                       Text(item.lead_source),
                                       SizedBox(height: 10),
-                                      Text(
-                                        item.item,
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400),
+                                      SizedBox(
+                                        width: 250,
+                                        child: Text(
+                                          item.item,
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -318,8 +321,9 @@ class LeadsPage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        onTap: ()async {
-                          final target = await get_user_name_from_id(item.uploader);
+                        onTap: () async {
+                          final target =
+                              await get_user_name_from_id(item.uploader);
                           showModalBottomSheet(
                             context: context,
                             builder: (context) => Container(
@@ -354,8 +358,13 @@ class LeadsPage extends StatelessWidget {
                                         'Status', item.status),
                                     Visibility(
                                       visible: isAdmin,
-                                      child: SingleLeadsDataContainerTextMobileMode(
-                                          'Credit', target.name+'\n('+target.email+')'),
+                                      child:
+                                          SingleLeadsDataContainerTextMobileMode(
+                                              'Credit',
+                                              target.name +
+                                                  '\n(' +
+                                                  target.email +
+                                                  ')'),
                                     ),
                                   ],
                                 ),
@@ -546,24 +555,27 @@ Widget SingleLeadsDataContainerTextMobileMode(String title, String name) {
 
 Widget GoToPurchaseOrNotContainer(LeadsModel e) {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 350, vertical: 250),
+    margin: EdgeInsets.symmetric(horizontal: 20, vertical: 250),
     color: Colors.white,
     child: Padding(
-      padding: EdgeInsets.all(50),
+      padding: EdgeInsets.all(20),
       child: Column(
         children: [
           Text(
             'There is not enough stock for this order.',
-            style: TextStyle(color: Colors.red, fontSize: 23),
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.red, fontSize: 20),
           ),
+          SizedBox(height: 20),
           Text(
             'Continue to purchase order?',
+            textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 27,
+              fontSize: 25,
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -573,7 +585,7 @@ Widget GoToPurchaseOrNotContainer(LeadsModel e) {
                 },
                 child: Text(
                   'Cancel',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 17),
                 ),
               ),
               TextButton(
@@ -588,19 +600,19 @@ Widget GoToPurchaseOrNotContainer(LeadsModel e) {
                 },
                 child: Text(
                   'Add Anyway',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 17),
                 ),
               ),
               TextButton(
                 onPressed: () {
+                  Get.back();
                   Get.find<ViewController>(tag: 'viewcont')
                       .currentPageIndex
-                      .value = 10;
-                  Get.back();
+                      .value = 12;
                 },
                 child: Text(
                   'Purchase order',
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 17),
                 ),
               )
             ],

@@ -146,7 +146,7 @@ Widget ImageContainer(BuildContext context, String name, String code,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: 180,
+                  width: 300,
                   child: Text(
                     name,
                     style: TextStyle(
