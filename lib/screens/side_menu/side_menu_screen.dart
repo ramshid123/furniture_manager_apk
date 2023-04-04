@@ -66,7 +66,7 @@ class SideMenu extends StatelessWidget {
                               )
                             : CircleAvatar(
                         radius: 40,
-                        backgroundImage: NetworkImage('$endPoint/storage/buckets/$profilePhotoBucketId/files/${currentUserPic}/view?project=63ab320db49e5e71525f'),
+                        backgroundImage: NetworkImage('$endPoint/storage/buckets/$profilePhotoBucketId/files/${currentUserPic}/view?project=64296421a251168288ea'),
                       )),
                   ),
                   SizedBox(height: 5),
@@ -161,56 +161,59 @@ class SideMenuButton extends StatelessWidget {
               barrierDismissible: true,
               context: context,
               builder: (context) => Container(
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 300),
+                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 250),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
-                child: Column(
-                  children: [
-                    SizedBox(height: 50),
-                    SizedBox(
-                      height: 30,
-                      child: Scaffold(
-                        body: Center(
-                          child: Text(
-                            'Do you want to Logout?',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w700,
+                child: Material(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  child: Column(
+                    children: [
+                      SizedBox(height: 50),
+                      SizedBox(
+                        height: 30,
+                        child: 
+                           Center(
+                            child: Text(
+                              'Do you want to Logout?',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w700,
+                              ),
                             ),
                           ),
-                        ),
+                       
                       ),
-                    ),
-                    SizedBox(height: 50),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextButton(
-                          onPressed: () async {
-                            await AuthService().Logout();
-                          },
-                          child: Text(
-                            'Logout',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.bold),
+                      SizedBox(height: 50),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextButton(
+                            onPressed: () async {
+                              await AuthService().Logout();
+                            },
+                            child: Text(
+                              'Logout',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 30),
-                        TextButton(
-                          onPressed: () {
-                            Get.back();
-                          },
-                          child: Text(
-                            'Go Back',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.bold),
+                          SizedBox(width: 30),
+                          TextButton(
+                            onPressed: () {
+                              Get.back();
+                            },
+                            child: Text(
+                              'Go Back',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                      ],
-                    )
-                  ],
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             );

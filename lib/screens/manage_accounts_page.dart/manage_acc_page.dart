@@ -140,10 +140,10 @@ Widget AccountContainer(BuildContext context, AccountModel item) {
                       : CircleAvatar(
                           radius: 40,
                           backgroundImage: NetworkImage(
-                              '$endPoint/storage/buckets/$profilePhotoBucketId/files/${item.photo}/view?project=63ab320db49e5e71525f'),
+                              '$endPoint/storage/buckets/$profilePhotoBucketId/files/${item.photo}/view?project=64296421a251168288ea'),
                         )
                   // Image.network(
-                  //     '$endPoint/storage/buckets/$profilePhotoBucketId/files/${item.photo}/view?project=63ab320db49e5e71525f',
+                  //     '$endPoint/storage/buckets/$profilePhotoBucketId/files/${item.photo}/view?project=64296421a251168288ea',
                   //     loadingBuilder: (BuildContext context, Widget child,
                   //         ImageChunkEvent? loadingProgress) {
                   //       if (loadingProgress == null) return child;
@@ -253,7 +253,7 @@ Widget SingleItemDataContainer(BuildContext context, AccountModel item) {
                   )
                 : Image.network(
                     // doc!.data['img'],
-                    '$endPoint/storage/buckets/$profilePhotoBucketId/files/${item.photo}/view?project=63ab320db49e5e71525f',
+                    '$endPoint/storage/buckets/$profilePhotoBucketId/files/${item.photo}/view?project=64296421a251168288ea',
                     loadingBuilder: (BuildContext context, Widget child,
                         ImageChunkEvent? loadingProgress) {
                       if (loadingProgress == null) return child;

@@ -54,7 +54,7 @@ class ItemModel {
         final newFile = await storage.createFile(
           bucketId: bucketId,
           fileId: 'unique()',
-          file: InputFile(path: res!.path),
+          file: InputFile(path: res!=null?res.path:'no_image'),
         );
 
         await db.updateDocument(
@@ -63,8 +63,8 @@ class ItemModel {
             documentId: newDoc.$id,
             data: {
               'doc_id': newDoc.$id,
-              'img': newFile.$id
-              // 'https://ddf8-129-154-237-199.in.ngrok.io/v1/storage/buckets/$bucketId/files/${v2.$id}/view?project=63ab320db49e5e71525f'
+              'img': res!=null?newFile.$id:'no_image'
+              // 'https://ddf8-129-154-237-199.in.ngrok.io/v1/storage/buckets/$bucketId/files/${v2.$id}/view?project=64296421a251168288ea'
             });
         print(newDoc.$id);
       } else {
@@ -120,7 +120,7 @@ Future<void> testitemsadd() async {
         data: {
           'doc_id': newDoc.$id,
           'img': newFile.$id
-          // 'https://ddf8-129-154-237-199.in.ngrok.io/v1/storage/buckets/$bucketId/files/${v2.$id}/view?project=63ab320db49e5e71525f'
+          // 'https://ddf8-129-154-237-199.in.ngrok.io/v1/storage/buckets/$bucketId/files/${v2.$id}/view?project=64296421a251168288ea'
         });
   }
 }
@@ -262,5 +262,5 @@ Future<Document?> getSingleItemsData(
   }
 }
 
-final itemCollectionId = '63ba5bcb6b8de7a24466';
+final itemCollectionId = '642984aa89bf68ab0b91';
 List<ItemModel> item_model_list = [];

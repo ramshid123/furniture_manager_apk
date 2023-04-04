@@ -51,10 +51,9 @@ class MyApp extends StatelessWidget {
   }
 }
 
-final databaseId = '63ab321c196cbdb3472d';
-final bucketId = '63b9a8450f4654fba4a3';
-final endPoint = 'https://115b-129-154-237-199.in.ngrok.io/v1';
-// final endPoint = 'https://lemon-pants-vanish-129-154-237-199.loca.lt/v1';
+final databaseId = '64297d32bf8534bb24da';
+final bucketId = '6429873748c667dbc728';
+final endPoint = 'http://159.65.150.201/v1';
 
 late Databases db;
 late Account acc;
@@ -70,7 +69,7 @@ Future<void> initAppwrite() async {
   Client client = Client();
   client
       .setEndpoint(endPoint)
-      .setProject('63ab320db49e5e71525f')
+      .setProject('64296421a251168288ea')
       .setSelfSigned(status: true);
 
   db = Databases(client);
@@ -150,7 +149,7 @@ bool isLoggedIn = false;
 //     final response = await http.get(
 //         Uri.parse('https://115b-129-154-237-199.in.ngrok.io/v1/databases/63ab321c196cbdb3472d/collections/$leadsCollectionId'),
 //         headers: {
-//             'x-appwrite-project': '63ab320db49e5e71525f',
+//             'x-appwrite-project': '64296421a251168288ea',
 //             'x-appwrite-key': apiKey,
 //         },
 //     );

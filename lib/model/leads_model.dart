@@ -271,6 +271,6 @@ Widget WarningBox(AppwriteException e) {
   );
 }
 
-final leadsCollectionId = '63ab3240c0d23224e6d5';
+final leadsCollectionId = '6429853be733401c8547';
 
 List<LeadsModel> leads_model_list = [];

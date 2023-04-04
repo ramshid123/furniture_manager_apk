@@ -248,5 +248,5 @@ avoidAccountsDuplicates() {
 
 List<AccountModel> accounts_model_list = [];
 
-final accountsCollectionId = '63c584ae297b93cd261d';
-final profilePhotoBucketId = '63c6ad7e9bdc440f6233';
+final accountsCollectionId = '64297d3fdb71206dcdfc';
+final profilePhotoBucketId = '642987418972d512c5fe';

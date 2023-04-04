@@ -170,7 +170,7 @@ void searchPurchaseData(String query) async {
   var docs = await db.listDocuments(
       databaseId: databaseId,
       collectionId: purchaseCollectionId,
-      queries: [Query.search('name', query)]);
+      queries: [Query.search('supplier_name', query)]);
   docs.documents.forEach((element) {
     purchase_order_model_list.add(PurchaseOrderModel(
       ref_no: element.$id,
@@ -187,7 +187,7 @@ void searchPurchaseData(String query) async {
   docs = await db.listDocuments(
       databaseId: databaseId,
       collectionId: purchaseCollectionId,
-      queries: [Query.search('mobile_no', query)]);
+      queries: [Query.search('item_name', query)]);
   docs.documents.forEach((element) {
     purchase_order_model_list.add(PurchaseOrderModel(
       ref_no: element.$id,
@@ -206,4 +206,4 @@ void searchPurchaseData(String query) async {
 
 List<PurchaseOrderModel> purchase_order_model_list = [];
 
-final purchaseCollectionId = '63c19bd5e132ce451c12';
+final purchaseCollectionId = '6429861acf126e710cc1';
